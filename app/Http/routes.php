@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/all', 'UserController@showAllUsers');
+
+Route::post('/follow', 'UserController@followUser');
+Route::get('/following','UserController@showFollowing');

@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Follower;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -23,4 +24,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function followers()
+    {
+        return $this->hasMany('App\Follower');
+    }
 }
